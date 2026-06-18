@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faire un don — Les Ailes de l'Entraide</title>
+  <meta name="description" content="Soutenez l'association Les Ailes de l'Entraide en faisant un don pour aider les orphelins et les personnes en situation difficile.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== En-tête ===== -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpeg" alt="Logo Les Ailes de l'Entraide" class="logo-icon">
+        Les Ailes de l'<span>Entraide</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="nos-actions.html">Nos actions</a></li>
+        <li><a href="podcasts.html">Podcasts</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="don.html" class="nav-cta active">Faire un don</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== Bannière de page ===== -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Faire un don</h1>
+      <div class="breadcrumb"><a href="index.html">Accueil</a> / Faire un don</div>
+    </div>
+  </section>
+
+  <!-- ===== Introduction ===== -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Votre soutien compte</span>
+        <h2>Chaque don a un impact direct sur une vie</h2>
+        <p>Que vous souhaitiez faire un don ponctuel ou devenir donateur régulier, votre contribution permet de financer nos programmes d'éducation, de santé, d'aide alimentaire et de soutien social.</p>
+      </div>
+
+      <!-- ===== Choix du montant ===== -->
+      <h3 style="text-align:center; margin-bottom: 24px;">1. Choisissez un montant</h3>
+      <div class="donate-options">
+        <div class="donate-amount" data-amount="20">
+          <div class="amount">20 €</div>
+          <div class="amount-desc">Fournitures scolaires pour un enfant</div>
+        </div>
+        <div class="donate-amount" data-amount="50">
+          <div class="amount">50 €</div>
+          <div class="amount-desc">Panier alimentaire pour une famille</div>
+        </div>
+        <div class="donate-amount" data-amount="100">
+          <div class="amount">100 €</div>
+          <div class="amount-desc">Frais de scolarité mensuels d'un enfant</div>
+        </div>
+        <div class="donate-amount" data-amount="200">
+          <div class="amount">200 €</div>
+          <div class="amount-desc">Consultation médicale et médicaments</div>
+        </div>
+        <div class="donate-amount" data-amount="500">
+          <div class="amount">500 €</div>
+          <div class="amount-desc">Soutien complet d'un enfant pendant 1 mois</div>
+        </div>
+        <div class="donate-amount" data-amount="">
+          <div class="amount">Libre</div>
+          <div class="amount-desc">Choisissez le montant de votre choix</div>
+        </div>
+      </div>
+
+      <!-- ===== Formulaire de don ===== -->
+      <h3 style="text-align:center; margin-bottom: 24px;">2. Vos informations</h3>
+      <div class="donate-form-wrapper">
+        <div class="form-success" id="donate-success">
+          Merci pour votre générosité ! Votre demande de don a bien été enregistrée. Notre équipe vous contactera pour finaliser le paiement.
+        </div>
+        <div class="form-note">
+          Ceci est un formulaire de démonstration. Aucun paiement n'est traité directement sur cette page — un système de paiement sécurisé sera intégré ultérieurement.
+        </div>
+        <form id="donate-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="don-prenom">Prénom *</label>
+              <input type="text" id="don-prenom" name="prenom" required>
+            </div>
+            <div class="form-group">
+              <label for="don-nom">Nom *</label>
+              <input type="text" id="don-nom" name="nom" required>
+            </div>
+            <div class="form-group">
+              <label for="don-email">Adresse e-mail *</label>
+              <input type="email" id="don-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="don-telephone">Téléphone</label>
+              <input type="tel" id="don-telephone" name="telephone">
+            </div>
+            <div class="form-group">
+              <label for="custom-amount">Montant du don (€) *</label>
+              <input type="number" id="custom-amount" name="montant" min="1" required>
+            </div>
+            <div class="form-group">
+              <label for="don-frequence">Fréquence du don</label>
+              <select id="don-frequence" name="frequence">
+                <option value="ponctuel">Don ponctuel</option>
+                <option value="mensuel">Don mensuel</option>
+                <option value="annuel">Don annuel</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>Mode de paiement souhaité</label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="paiement" value="paypal" checked>
+                  PayPal
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="paiement" value="virement">
+                  Virement bancaire
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="paiement" value="cheque">
+                  Chèque
+                </label>
+              </div>
+            </div>
+            <div class="form-group full">
+              <label for="don-message">Message (facultatif)</label>
+              <textarea id="don-message" name="message" placeholder="Laissez-nous un message d'encouragement ou une précision sur votre don..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Confirmer mon don</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Autres moyens de soutenir ===== -->
+  <section class="bg-light">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Autres moyens de soutenir</span>
+        <h2>Plusieurs façons de nous aider</h2>
+        <p>En plus du don en ligne, vous pouvez nous soutenir directement par les moyens suivants.</p>
+      </div>
+      <div class="donate-methods">
+        <div class="method-card">
+          <div class="value-icon">🏦</div>
+          <h3>Virement bancaire</h3>
+          <p>IBAN :</p>
+          <p class="detail">FR76 XXXX XXXX XXXX XXXX XXXX XXX</p>
+          <p style="margin-top:8px;">BIC :</p>
+          <p class="detail">XXXXXXXX</p>
+        </div>
+        <div class="method-card">
+          <div class="value-icon">💳</div>
+          <h3>PayPal</h3>
+          <p>Envoyez votre don à l'adresse :</p>
+          <p class="detail">lesailesdelentraide59@gmail.com</p>
+        </div>
+        <div class="method-card">
+          <div class="value-icon">✉️</div>
+          <h3>Don par chèque</h3>
+          <p>À l'ordre de :</p>
+          <p class="detail">Association Les Ailes de l'Entraide</p>
+          <p style="margin-top:8px;">À envoyer au siège de l'association</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Parrainage ===== -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Devenez parrain ou marraine</h2>
+      <p>En devenant parrain ou marraine, vous accompagnez un enfant sur le long terme et suivez son évolution grâce à des rapports réguliers.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary">En savoir plus sur le parrainage</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Pied de page ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo">
+          <img src="images/logo.jpeg" alt="Logo Les Ailes de l'Entraide" class="logo-icon">
+          Les Ailes de l'Entraide
+        </a>
+        <p>Association solidaire dédiée à l'accompagnement des orphelins et des personnes en situation difficile à travers l'éducation, la santé et le soutien social.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/search/pages/?q=Les%20Ailes%20de%20L%27entraide" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook : Les Ailes de L'entraide">📘</a>
+          <a href="https://www.instagram.com/les_saveurs_dorient_by_jihane" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram : @les_saveurs_dorient_by_jihane">📷</a>
+          <a href="https://www.snapchat.com/add/lesailesdelentraide" target="_blank" rel="noopener" aria-label="Snapchat" title="Snapchat : lesailesdelentraide">👻</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="nos-actions.html">Nos actions</a></li>
+          <li><a href="podcasts.html">Podcasts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="don.html">Faire un don</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Devenir bénévole</a></li>
+          <li><a href="a-propos.html">Notre mission</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 Adresse à venir</li>
+          <li>📞 <a href="tel:+33783213570" style="color:inherit;">+33 7 83 21 35 70</a></li>
+          <li>💬 <a href="https://wa.me/33783213570" target="_blank" rel="noopener" style="color:inherit;">WhatsApp</a></li>
+          <li>✉️ <a href="mailto:lesailesdelentraide59@gmail.com" style="color:inherit;">lesailesdelentraide59@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      © 2026 Les Ailes de l'Entraide. Tous droits réservés.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
