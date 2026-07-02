@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sourds & Muets — Les Ailes de l'Entraide</title>
+  <meta name="description" content="Les Ailes de l'Entraide soutient un centre pour personnes sourdes et muettes : courses alimentaires et couscous chaque vendredi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ---- Hero sourds-muets ---- */
+    .sm-hero {
+      background: #0d1b2a;
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+    .sm-hero .eyebrow {
+      color: var(--color-primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .sm-hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #fff;
+      margin: 0 auto 20px;
+      max-width: 700px;
+    }
+    .sm-hero h1 span {
+      color: var(--color-primary);
+    }
+    .sm-hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ---- Cards 3 colonnes ---- */
+    .sm-cards {
+      padding: 80px 0;
+      background: #f7f9fc;
+    }
+    .sm-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .sm-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+      overflow: visible;
+      position: relative;
+      padding-bottom: 28px;
+    }
+    .sm-card-photo {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 20px 20px 0 0;
+      display: block;
+    }
+    .sm-card-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--color-primary);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin: -30px auto 0;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .sm-card-title {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #0d1b2a;
+      margin: 20px 20px 0;
+    }
+    .sm-card-text {
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      margin: 10px 20px 0;
+      line-height: 1.6;
+    }
+
+    /* ---- Blocs détaillés ---- */
+    .sm-detail {
+      padding: 80px 0;
+    }
+    .sm-detail:nth-child(even) {
+      background: #f7f9fc;
+    }
+    .sm-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .sm-detail-grid.reverse {
+      direction: rtl;
+    }
+    .sm-detail-grid.reverse > * {
+      direction: ltr;
+    }
+    .sm-detail-grid img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .sm-detail-text .tag {
+      display: inline-block;
+      background: rgba(var(--color-primary-rgb, 212,160,23), 0.12);
+      color: var(--color-primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .sm-detail-text h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0d1b2a;
+      margin-bottom: 18px;
+      line-height: 1.25;
+    }
+    .sm-detail-text p {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .sm-detail-text ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 8px;
+    }
+    .sm-detail-text ul li {
+      padding: 7px 0;
+      color: #444;
+      font-size: 0.95rem;
+    }
+    .sm-detail-text em {
+      display: block;
+      margin-top: 16px;
+      color: var(--color-primary);
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 768px) {
+      .sm-cards-grid { grid-template-columns: 1fr; }
+      .sm-detail-grid, .sm-detail-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .sm-detail-grid img { height: 240px; }
+      .sm-hero { padding: 80px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== En-tête ===== -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpeg" alt="Logo Les Ailes de l'Entraide" class="logo-icon">
+        <span>Les Ailes de l'<span>Entraide</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="sourds-muets.html" class="active">Sourds &amp; Muets</a></li>
+        <li><a href="nos-actions.html">Nos actions</a></li>
+        <li><a href="podcasts.html">Podcasts</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="don.html" class="nav-cta">Faire un don</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="sm-hero">
+    <div class="container">
+      <span class="eyebrow">Solidarité inclusive</span>
+      <h1>Soutien au Centre<br><span>des Sourds et Muets</span></h1>
+      <p>Parce que la solidarité ne connaît aucune frontière, nous étendons notre aide aux résidents d'un centre pour personnes sourdes et muettes.</p>
+    </div>
+  </section>
+
+  <!-- ===== 3 cartes ===== -->
+  <section class="sm-cards">
+    <div class="container">
+      <div class="sm-cards-grid">
+
+        <div class="sm-card">
+          <img src="images/sourds-courses-alimentaires.jpeg" alt="Courses alimentaires pour le centre" class="sm-card-photo">
+          <div class="sm-card-icon">🛒</div>
+          <h3 class="sm-card-title">Courses alimentaires</h3>
+          <p class="sm-card-text">Approvisionnement régulier en denrées fraîches et produits essentiels pour les résidents du centre.</p>
+        </div>
+
+        <div class="sm-card">
+          <img src="images/sourds-enfants-repas.jpeg" alt="Enfants partageant un repas au centre" class="sm-card-photo">
+          <div class="sm-card-icon">🍽️</div>
+          <h3 class="sm-card-title">Couscous du vendredi</h3>
+          <p class="sm-card-text">Chaque vendredi, nos bénévoles préparent et partagent un couscous maison avec les résidents.</p>
+        </div>
+
+        <div class="sm-card">
+          <img src="images/sourds-couscous.jpeg" alt="Couscous préparé par les bénévoles" class="sm-card-photo">
+          <div class="sm-card-icon">🤝</div>
+          <h3 class="sm-card-title">Lien humain</h3>
+          <p class="sm-card-text">Un moment de convivialité, de dignité et de fraternité qui rythme la semaine des résidents.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Bloc détail 1 : Courses alimentaires ===== -->
+  <section class="sm-detail">
+    <div class="container">
+      <div class="sm-detail-grid">
+        <div class="sm-detail-text">
+          <span class="tag">Courses alimentaires</span>
+          <h2>Des achats solidaires pour subvenir aux besoins du centre</h2>
+          <p>Les Ailes de l'Entraide prend en charge régulièrement les courses alimentaires du centre, en veillant à ce que chaque résident dispose des produits essentiels au quotidien.</p>
+          <p>Nos bénévoles sélectionnent avec soin les denrées nécessaires — légumes frais, semoule, épices, produits de base — afin d'offrir des repas de qualité à ceux qui en ont le plus besoin.</p>
+          <ul>
+            <li>✔️ Approvisionnement hebdomadaire en denrées fraîches</li>
+            <li>✔️ Sélection adaptée aux besoins nutritionnels des résidents</li>
+            <li>✔️ Soutien matériel en produits de première nécessité</li>
+          </ul>
+        </div>
+        <img src="images/sourds-courses-alimentaires.jpeg" alt="Courses alimentaires pour le centre des sourds et muets">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Bloc détail 2 : Couscous du vendredi ===== -->
+  <section class="sm-detail">
+    <div class="container">
+      <div class="sm-detail-grid reverse">
+        <div class="sm-detail-text">
+          <span class="tag">Couscous du vendredi</span>
+          <h2>Un plat préparé avec amour, chaque vendredi</h2>
+          <p>Chaque vendredi, nos bénévoles préparent un couscous maison généreux et savoureux, qu'ils apportent et servent chaleureusement au centre.</p>
+          <p>Ce moment va bien au-delà du simple repas : c'est un rendez-vous de convivialité, de dignité et de partage qui rythme la semaine des résidents et leur rappelle qu'ils ne sont pas seuls.</p>
+          <ul>
+            <li>✔️ Couscous préparé maison par nos bénévoles</li>
+            <li>✔️ Servi chaque vendredi sans interruption</li>
+            <li>✔️ Moment de lien humain et de convivialité</li>
+          </ul>
+        </div>
+        <img src="images/sourds-couscous.jpeg" alt="Couscous préparé par les bénévoles pour le centre des sourds et muets">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Bloc détail 3 : Repas partagé ===== -->
+  <section class="sm-detail">
+    <div class="container">
+      <div class="sm-detail-grid">
+        <div class="sm-detail-text">
+          <span class="tag">Moments de partage</span>
+          <h2>Autour de la table, la solidarité prend tout son sens</h2>
+          <p>Ces repas partagés créent des moments précieux de joie et de fraternité. Les enfants et résidents du centre se retrouvent autour de la table, le sourire aux lèvres, dans une atmosphère chaleureuse et familiale.</p>
+          <p>Parce qu'un repas partagé est bien plus qu'une assiette remplie — c'est un geste de reconnaissance, d'amour et de solidarité qui touche les cœurs.</p>
+          <em>Parce que la solidarité ne connaît pas de frontières, et que chaque personne mérite d'être vue, entendue et accompagnée.</em>
+        </div>
+        <img src="images/sourds-enfants-repas.jpeg" alt="Enfants du centre partageant un repas ensemble">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Soutenez cette initiative</h2>
+      <p>Votre don nous permet de continuer à être présents chaque vendredi auprès des résidents du centre.</p>
+      <div class="cta-buttons">
+        <a href="don.html" class="btn btn-primary">Faire un don</a>
+        <a href="contact.html" class="btn btn-secondary">Devenir bénévole</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Pied de page ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo">
+          <img src="images/logo.jpeg" alt="Logo Les Ailes de l'Entraide" class="logo-icon">
+          Les Ailes de l'Entraide
+        </a>
+        <p>Association solidaire dédiée à l'accompagnement des orphelins et des personnes en situation difficile à travers l'éducation, la santé et le soutien social.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/1CepRYvT4E/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/les_saveurs_dorient_by_jihane" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.516 2.497 5.783 2.226 7.149 2.163 8.415 2.105 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038C23.986 15.668 24 15.259 24 12s-.014-3.668-.072-4.948c-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/33783213570" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://www.snapchat.com/add/lesailesdelentraide" target="_blank" rel="noopener" aria-label="Snapchat" title="Snapchat">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.065.135C6.948.135 5.31 4.322 5.31 6.957c0 .284.017.568.05.85-.214.12-.435.182-.668.182-.467 0-.9-.213-1.234-.6a.608.608 0 0 0-.484-.232.594.594 0 0 0-.35.114c-.48.332-.5.832-.5.999 0 .73.481 1.298 1.43 1.688.083.033.192.063.212.152.03.126-.055.395-.1.532a3.46 3.46 0 0 1-.078.208c-.41 1.003-1.235 1.094-1.666 1.17a2.064 2.064 0 0 0-.311.065c-.418.143-.454.44-.446.575.016.278.226.504.527.588.844.234 1.178.493 1.285.697.047.09.044.172.013.325-.16.788-1.19 2.124-1.19 3.537 0 .36.065.705.198 1.025.644 1.561 2.624 2.35 5.882 2.35.249 0 .5-.007.752-.021.389.247.923.382 1.485.382s1.096-.135 1.485-.382c.252.014.503.021.752.021 3.258 0 5.238-.789 5.882-2.35.133-.32.198-.665.198-1.025 0-1.413-1.03-2.749-1.19-3.537-.031-.153-.034-.235.013-.325.107-.204.44-.463 1.285-.697.301-.084.511-.31.527-.588.008-.135-.028-.432-.446-.575a2.064 2.064 0 0 0-.311-.065c-.431-.076-1.256-.167-1.666-1.17a3.46 3.46 0 0 1-.078-.208c-.045-.137-.13-.406-.1-.532.02-.089.129-.119.212-.152.949-.39 1.43-.958 1.43-1.688 0-.167-.02-.667-.5-.999a.594.594 0 0 0-.35-.114.608.608 0 0 0-.484.232c-.334.387-.767.6-1.234.6-.233 0-.454-.062-.668-.182.033-.282.05-.566.05-.85C18.72 4.322 17.082.135 12.065.135z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="sourds-muets.html">Sourds &amp; Muets</a></li>
+          <li><a href="nos-actions.html">Nos actions</a></li>
+          <li><a href="podcasts.html">Podcasts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="don.html">Faire un don</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Devenir bénévole</a></li>
+          <li><a href="a-propos.html">Notre mission</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 Adresse à venir</li>
+          <li>📞 <a href="tel:+33783213570" style="color:inherit;">+33 7 83 21 35 70</a></li>
+          <li>💬 <a href="https://wa.me/33783213570" target="_blank" rel="noopener" style="color:inherit;">WhatsApp</a></li>
+          <li>✉️ <a href="mailto:lesailesdelentraide59@gmail.com" style="color:inherit;">lesailesdelentraide59@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      © 2026 Les Ailes de l'Entraide. Tous droits réservés.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
