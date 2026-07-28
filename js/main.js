@@ -45,14 +45,29 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      const btn = contactForm.querySelector('button[type="submit"]');
       const successMsg = document.getElementById('contact-success');
-      if (successMsg) {
-        successMsg.classList.add('show');
-      }
-      contactForm.reset();
-      if (successMsg) {
-        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+      btn.textContent = 'Envoi en cours…';
+      btn.disabled = true;
+
+      emailjs.sendForm(
+        'YOUR_SERVICE_ID',
+        'YOUR_CONTACT_TEMPLATE_ID',
+        contactForm
+      ).then(() => {
+        if (successMsg) {
+          successMsg.classList.add('show');
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        contactForm.reset();
+        btn.textContent = 'Envoyer le message';
+        btn.disabled = false;
+      }).catch((err) => {
+        alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.');
+        console.error('EmailJS error:', err);
+        btn.textContent = 'Envoyer le message';
+        btn.disabled = false;
+      });
     });
   }
 
@@ -114,13 +129,30 @@ document.addEventListener('DOMContentLoaded', () => {
   if (donateForm) {
     donateForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      const btn = donateForm.querySelector('button[type="submit"]');
       const successMsg = document.getElementById('donate-success');
-      if (successMsg) {
-        successMsg.classList.add('show');
-        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-      donateForm.reset();
-      donateAmounts.forEach(el => el.classList.remove('selected'));
+      btn.textContent = 'Envoi en cours…';
+      btn.disabled = true;
+
+      emailjs.sendForm(
+        'YOUR_SERVICE_ID',
+        'YOUR_DON_TEMPLATE_ID',
+        donateForm
+      ).then(() => {
+        if (successMsg) {
+          successMsg.classList.add('show');
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        donateForm.reset();
+        donateAmounts.forEach(el => el.classList.remove('selected'));
+        btn.textContent = 'Confirmer mon don';
+        btn.disabled = false;
+      }).catch((err) => {
+        alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.');
+        console.error('EmailJS error:', err);
+        btn.textContent = 'Confirmer mon don';
+        btn.disabled = false;
+      });
     });
   }
 
