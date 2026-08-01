@@ -208,14 +208,14 @@ img.logo-icon {
   border-radius: 2px;
 }
 
-.nav-cta {
+.nav-menu a.nav-cta {
   background-color: var(--color-primary);
   color: var(--color-white) !important;
   padding: 12px 32px;
   border-radius: 50px;
 }
 
-.nav-cta:hover {
+.nav-menu a.nav-cta:hover {
   background-color: var(--color-primary-dark);
 }
 
