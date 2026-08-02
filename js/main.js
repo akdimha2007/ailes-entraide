@@ -2,7 +2,7 @@
 // Ailes d'Entraide - Script principal
 // ===========================
 
-const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY'; // Remplace par ta clé web3forms.com
+const WEB3FORMS_KEY = 'f6473f96-bd01-4c78-8a90-a04b63d63bb7'; // Remplace par ta clé web3forms.com
 
 document.addEventListener('DOMContentLoaded', () => {
 
