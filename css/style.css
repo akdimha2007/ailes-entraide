@@ -526,9 +526,15 @@ img.logo-icon {
 
 /* ===== Podcasts ===== */
 .podcast-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 28px;
+}
+
+.podcast-grid .podcast-card {
+  flex: 0 0 calc(33.333% - 19px);
+  max-width: calc(33.333% - 19px);
 }
 
 .podcast-card {
@@ -1342,6 +1348,11 @@ img.logo-icon {
 
   .card-body h3 {
     font-size: 1.1rem;
+  }
+
+  .podcast-grid .podcast-card {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   .podcast-info {
